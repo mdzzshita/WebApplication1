@@ -1,0 +1,55 @@
+﻿@*@model Customer
+@using WebApplication1.Models*@
+
+@using WebApplication1.ViewModels;
+@model CustomerEmployeeViewModel
+
+@{
+    Layout = null;
+    //Employee emp = ViewBag.Employee;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+        <h2>@Model.CustomerName@ViewBag.greeting</h2>
+        <div>
+            <br>
+            <b>顾客信息</b><br>
+            姓名：@Model.CustomerName<br>
+            爱好：@Model.CustomerHobby<br>
+        </div>
+
+        <h2>@Model.EmployeeName@ViewBag.greeting</h2>
+        <div>
+            <br>
+            <b>员工信息</b><br>
+            姓名：@Model.EmployeeName<br>
+            工资：@Model.EmployeeSalary.ToString("C")
+
+            @{
+                if (@Model.EmployeeSalary > 10000)
+                {
+                    <p>
+                        土豪
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        屌丝
+                    </p>
+                }
+            }
+        </div>
+
+    </div>
+</body>
+</html>

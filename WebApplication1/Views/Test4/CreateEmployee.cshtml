@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateEmployee</title>
+</head>
+<body>
+    <h2>新增</h2>
+    <div>
+        <form action="/Test4/CreateEmployee" method="POST">
+            姓名：<input type="text" id="TxtlName" name="Name" value="" />@Html.ValidationMessage("Name") <br/>
+            工资：<input type="text" id="TxtSalary" name="Salary" value="">@Html.ValidationMessage("Salary")<br />
+            <input type="submit" name="BtnSubmit" value="保存">
+            <input type="reset" name="BtnReset" value="重置">
+            <input type="submit" name="BtnSubmit" value="取消">
+        </form>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@using WebApplication1.ViewModels;
+@model EmployeeViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+
+        <h2>@*@Model.Greeting,@Model.UserName*@</h2>
+        <div>
+            <br>
+            <b>员工信息</b><br>
+            姓名：@Model.EmployeeName<br>
+            工资：@Model.EmployeeSalary<br>
+            级别：@Model.EmployeeGrade<br>
+        </div>
+       
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Models.Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Updatep</title>
+</head>
+<body>
+    <h2>更新</h2>
+    <div>
+        <form action="/Test4/Updatep" method="POST">
+            姓名：<input type="text" id="TxtlName" name="Name" value="@Model.Name" /><br />
+            工资：<input type="text" id="TxtSalary" name="Salary" value="@Model.Salary"><br />
+            <input type="hidden" id="TxtSalary" name="Employeeld" value="@Model.Employeeld">
+            <input type="submit" name="BtnSubmit" value="更新">
+            <input type="submit" name="BtnSubmit" value="取消">
+        </form>
+    </div> 
+</body>
+</html>

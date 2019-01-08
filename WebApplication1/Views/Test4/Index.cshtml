@@ -1,0 +1,72 @@
+﻿@model WebApplication1.ViewModels.EmployeeListViewModel
+@{
+    Layout = "~/Views/Shared/My_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+         <h2>@Model.Greeting,@Model.UserName</h2>
+        <p><a href="/Test4/CreateEmployee">新增</a></p>
+        <br/>
+        <form action="/Test4/Select" method="POST">
+            姓名：<input type="text" id="TxtlName" name="name" value="" />
+            <input type="submit" name="BtnSubmit" value="查询">
+        </form>
+        <hr>
+         <div>
+             <table class="table">
+                 <tr>
+                     <th>名字</th>
+                     <th>工资</th>
+                     <th>级别</th>
+                 </tr>
+
+                 @foreach (var item in Model.EmployeeListView)
+                 {
+                    <tr>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.EmployeeSalary</td>
+                        <td>@item.EmployeeGrade</td> 
+                        <td>
+                            @Html.ActionLink("删除", "Delete", new { id = item.EmployeeId })
+                            @Html.ActionLink("更新", "Updatep", new { id = item.EmployeeId })
+                        </td>
+                    </tr>
+                   
+                 }
+             </table>
+         </div>
+     
+
+
+        @*<div>
+            <ul>
+
+                @foreach (var item in Model.EmployeeListView)
+                {
+
+                    <li>
+                        @item.EmployeeName,
+                        @item.EmployeeSalary,
+                        @item.EmployeeGrade
+                        <a href="/Test4/Delete/@item.EmployeeId">删除</a>
+                        <a href="/Test4/Updatep/@item.EmployeeId">更新</a>
+                   </li>
+                  
+
+                }
+            </ul>
+        </div>*@
+
+
+
+    </div>
+</body>
+</html>
